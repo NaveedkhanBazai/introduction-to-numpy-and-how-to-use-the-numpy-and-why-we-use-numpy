@@ -1,0 +1,44 @@
+Statistical Testing:
+
+Statistical testing, also known as hypothesis testing, is a method used in inferential statistics to make decisions or draw conclusions about a population based on a sample of data. It involves formulating null and alternative hypotheses and using sample data to assess the likelihood of these hypotheses being true. The goal of statistical testing is to determine whether there is enough evidence in the sample data to reject the null hypothesis in favor of the alternative hypothesis.
+
+Why use Statistical Testing:
+
+Inference to Population: Statistical testing allows us to make inferences about the entire population based on a sample, without having to examine the entire population.
+
+Decision Making: It provides a systematic and objective approach to make decisions in scientific research, data analysis, and hypothesis-driven investigations.
+
+Assessment of Effects: Statistical testing helps determine if the effect observed in the sample is statistically significant and not just due to random chance.
+
+Comparison of Groups: It allows for comparing two or more groups to determine if there are significant differences between them.
+
+Validation of Models: Statistical testing can be used to assess the validity and accuracy of statistical models and predictions.
+
+Basic Statistical Testing Code:
+
+Here's a basic example of conducting a one-sample t-test in Python using the scipy.stats module:
+import numpy as np
+from scipy import stats
+
+# Sample data
+data = np.array([28, 31, 29, 32, 30, 31, 30, 29, 33, 28])
+
+# Null hypothesis: The mean of the population is 30
+null_mean = 30
+
+# Perform one-sample t-test
+t_stat, p_value = stats.ttest_1samp(data, null_mean)
+
+# Display the results
+print("One-sample t-test results:")
+print("T-statistic:", t_stat)
+print("P-value:", p_value)
+
+# Check if the result is statistically significant at 95% confidence level
+if p_value < 0.05:
+    print("Reject the null hypothesis: The mean is different from 30.")
+else:
+    print("Fail to reject the null hypothesis: The mean is not significantly different from 30.")
+In this code, we import the required libraries, create sample data data, and specify the null hypothesis that the population mean is 30. We use stats.ttest_1samp() to perform the one-sample t-test and obtain the t-statistic and p-value. The p-value represents the probability of observing the data given that the null hypothesis is true. If the p-value is less than a chosen significance level (commonly 0.05), we reject the null hypothesis in favor of the alternative hypothesis.
+
+This is a basic example, and there are various other statistical tests like two-sample t-test, ANOVA, chi-square test, etc., used for different types of data and research questions. Statistical testing plays a critical role in data analysis, research, and decision-making, allowing us to draw meaningful conclusions from sample data and make informed choices based on evidence.
