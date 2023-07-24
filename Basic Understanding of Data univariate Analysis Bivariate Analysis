@@ -1,0 +1,58 @@
+Data Univariate Analysis:
+
+Univariate analysis is a statistical technique used to analyze and summarize data of a single variable. It involves examining the distribution, central tendency, and spread of the data, as well as identifying any patterns or outliers. Common methods used in univariate analysis include histograms, box plots, measures of central tendency (mean, median, mode), and measures of dispersion (variance, standard deviation). Univariate analysis provides insights into the characteristics of a single variable, allowing us to understand its behavior and make data-driven decisions.
+
+Data Bivariate Analysis:
+
+Bivariate analysis is a statistical technique used to analyze and summarize the relationship between two variables. It helps to understand how one variable changes concerning another variable. Common methods used in bivariate analysis include scatter plots, correlation coefficients, and cross-tabulations. Bivariate analysis allows us to identify patterns, trends, and associations between two variables, helping us to explore cause-and-effect relationships and make predictions.
+
+Example - Univariate Analysis:
+
+Let's consider a dataset containing the ages of a group of people. We will perform univariate analysis to understand the distribution of ages and calculate the mean and standard deviation.
+import pandas as pd
+
+# Sample Ages Data
+data = {'Age': [25, 30, 22, 35, 28, 40, 33, 27, 29, 26]}
+df = pd.DataFrame(data)
+
+# Univariate Analysis
+mean_age = df['Age'].mean()
+std_age = df['Age'].std()
+
+print("Univariate Analysis - Ages:")
+print("Mean Age:", mean_age)
+print("Standard Deviation:", std_age)
+Example - Bivariate Analysis:
+
+Let's consider a dataset containing the hours studied by students and their corresponding exam scores. We will perform bivariate analysis to explore the relationship between hours studied and exam scores.
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Sample Study Hours and Exam Scores Data
+data = {'Study Hours': [2, 3, 1, 5, 4, 6, 2, 3, 4, 5],
+        'Exam Score': [60, 70, 50, 85, 75, 90, 65, 70, 80, 85]}
+df = pd.DataFrame(data)
+
+# Bivariate Analysis - Scatter Plot
+plt.scatter(df['Study Hours'], df['Exam Score'])
+plt.xlabel('Study Hours')
+plt.ylabel('Exam Score')
+plt.title('Study Hours vs. Exam Score')
+plt.show()
+
+# Bivariate Analysis - Correlation Coefficient
+correlation = df['Study Hours'].corr(df['Exam Score'])
+print("Bivariate Analysis - Correlation Coefficient:", correlation)
+Why use Univariate and Bivariate Analysis:
+
+Data Exploration: Univariate and bivariate analysis provide a foundational understanding of the data, enabling data exploration and preliminary insights.
+
+Data Cleaning: These techniques help identify missing values, outliers, and data inconsistencies, supporting data cleaning efforts.
+
+Descriptive Statistics: Univariate analysis allows us to compute descriptive statistics for single variables, while bivariate analysis helps us understand relationships and associations between two variables.
+
+Feature Selection: Univariate and bivariate analysis are useful in selecting relevant features for building predictive models, as they highlight the variables with significant impacts on the target variable.
+
+Hypothesis Testing: Bivariate analysis is often used to test hypotheses and determine if there is a statistically significant relationship between two variables.
+
+Data Visualization: Both analyses offer valuable visualizations that aid in presenting and communicating findings to stakeholders effectively.
